@@ -7,9 +7,6 @@ import { AddForm } from "./Components/AddForm/AddForm";
 import { OptionSelect } from "./Components/OptionSelect/OptionSelect";
 
 export const AddScreen = () => {
-	const [selectedDate, setSelectedDate] =
-		useState<string>("");
-
 	const [addType, setAddType] =
 		useState<string>("gain");
 
@@ -19,7 +16,10 @@ export const AddScreen = () => {
 				style="light"
 				backgroundColor="black"
 			/>
-			<OptionSelect />
+			<OptionSelect
+				typeValue={setAddType}
+				value={addType}
+			/>
 			<ScrollView>
 				<AddForm addType={addType} />
 				<Button text="Adicionar" width={300} />
