@@ -9,7 +9,15 @@ import { styles } from "./FormFieldStyled";
 export const FormField = ({
 	title,
 	type = "default",
+	value,
+	onChange,
 }: FormFieldProps) => {
+	const handleChange = (text: string) => {
+		if (onChange) {
+			onChange(text);
+		}
+	};
+
 	return (
 		<View style={styles.formFieldContainer}>
 			<Text style={styles.formTitle}>
@@ -18,6 +26,10 @@ export const FormField = ({
 			<TextInput
 				style={styles.formField}
 				keyboardType={type}
+				value={value}
+				onChange={(e) =>
+					handleChange(e.nativeEvent.text)
+				}
 			/>
 		</View>
 	);
