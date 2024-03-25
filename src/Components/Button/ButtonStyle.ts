@@ -5,8 +5,6 @@ export const styles = StyleSheet.create({
 		backgroundColor: "#50C878",
 		padding: 10,
 		borderRadius: 50,
-		width: 120,
-		height: 46,
 		alignItems: "center",
 	},
 	buttonText: {

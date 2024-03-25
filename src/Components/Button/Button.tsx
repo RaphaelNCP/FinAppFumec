@@ -9,10 +9,15 @@ export const Button = ({
 	text,
 	onPress,
 	disabled,
+	width = 120,
+	height = 46,
 }: ButtonProps) => {
 	return (
 		<TouchableOpacity
-			style={styles.button}
+			style={[
+				styles.button,
+				{ width: width, height: height },
+			]}
 			onPress={onPress}
 			disabled={disabled}
 		>
