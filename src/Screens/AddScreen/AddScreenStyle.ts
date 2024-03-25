@@ -13,4 +13,11 @@ export const styles = StyleSheet.create({
 		justifyContent: "space-around",
 		width: "100%",
 	},
+	picker: {
+		marginTop: 40,
+		width: 300,
+		borderRadius: 10,
+		overflow: "hidden",
+		backgroundColor: "#DADFF7",
+	},
 });

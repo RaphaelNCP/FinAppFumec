@@ -2,13 +2,8 @@ import {
 	Text,
 	TouchableOpacity,
 } from "react-native";
+import { ButtonProps } from "../../Utils/Types/ButtonProps";
 import { styles } from "./ButtonStyle";
-
-type ButtonProps = {
-	text: string;
-	onPress: () => void;
-	disabled?: boolean;
-};
 
 export const Button = ({
 	text,
@@ -16,7 +11,11 @@ export const Button = ({
 	disabled,
 }: ButtonProps) => {
 	return (
-		<TouchableOpacity style={styles.button}>
+		<TouchableOpacity
+			style={styles.button}
+			onPress={onPress}
+			disabled={disabled}
+		>
 			<Text style={styles.buttonText}>
 				{text}
 			</Text>
