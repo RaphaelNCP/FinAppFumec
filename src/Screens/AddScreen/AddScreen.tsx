@@ -39,6 +39,7 @@ export const AddScreen = () => {
 						placeholder={{
 							label: "Selecione a categoria",
 							value: null,
+							color: "#000",
 						}}
 						items={[
 							{

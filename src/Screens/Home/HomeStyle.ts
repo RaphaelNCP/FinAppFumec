@@ -2,7 +2,7 @@ import { StyleSheet } from "react-native";
 
 export const styles = StyleSheet.create({
 	monthlyBalanceVisor: {
-		marginTop: 90,
+		marginTop: 10,
 		alignItems: "flex-start",
 		flexDirection: "column",
 	},
@@ -13,7 +13,7 @@ export const styles = StyleSheet.create({
 		flexWrap: "wrap",
 	},
 	resumeBalance: {
-		marginTop: 100,
+		marginTop: 20,
 		flexDirection: "row",
 		alignItems: "center",
 	},
@@ -24,7 +24,7 @@ export const styles = StyleSheet.create({
 		fontWeight: "300",
 	},
 	BalanceTopics: {
-		marginTop: 60,
+		marginTop: 20,
 		flexDirection: "column",
 	},
 });

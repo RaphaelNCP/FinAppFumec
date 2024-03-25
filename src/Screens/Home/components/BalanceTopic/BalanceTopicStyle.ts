@@ -18,6 +18,7 @@ export const styles = StyleSheet.create({
 		fontSize: 18,
 		marginLeft: 10,
 		fontWeight: "300",
+		width: "60%",
 	},
 	topicValue: {
 		color: "#50C878",

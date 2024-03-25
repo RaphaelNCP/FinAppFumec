@@ -19,5 +19,6 @@ export const styles = StyleSheet.create({
 		borderRadius: 10,
 		overflow: "hidden",
 		backgroundColor: "#DADFF7",
+		color: "#000",
 	},
 });

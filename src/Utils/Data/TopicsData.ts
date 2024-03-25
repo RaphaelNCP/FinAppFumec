@@ -19,6 +19,26 @@ export const topicsData = [
 		title: "Gastos de investimento",
 		value: 4000,
 	},
+	{
+		type: "gain",
+		title: "Salário",
+		value: 1000,
+	},
+	{
+		type: "gain",
+		title: "Rendimentos de investimentos",
+		value: 2000,
+	},
+	{
+		type: "gain",
+		title: "Lucros de negócios",
+		value: 3000,
+	},
+	{
+		type: "gain",
+		title: "Outras rendas",
+		value: 4000,
+	},
 ];
 
 // Tipos de gastos:
