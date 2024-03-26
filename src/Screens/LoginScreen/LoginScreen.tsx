@@ -30,12 +30,12 @@ export const LoginScreen = () => {
 				<Title>Login:</Title>
 				<View style={styles.loginContainer}>
 					<FormField
-						title="Username"
+						title="Usuário"
 						value={username}
 						onChange={handleUsernameChange}
 					/>
 					<FormField
-						title="Password"
+						title="Senha"
 						isPassword
 						value={password}
 						onChange={handlePasswordChange}

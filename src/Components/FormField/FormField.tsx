@@ -15,6 +15,7 @@ export const FormField = ({
 	value,
 	onChange,
 	isPassword = false,
+	placeholder,
 }: FormFieldProps) => {
 	const [showPassword, setShowPassword] = useState(false);
 
@@ -52,6 +53,7 @@ export const FormField = ({
 			<TextInput
 				style={styles.formField}
 				keyboardType={type}
+				placeholder={placeholder}
 				value={value}
 				secureTextEntry={!showPassword && isPassword}
 				onChange={(e) => handleChange(e.nativeEvent.text)}
