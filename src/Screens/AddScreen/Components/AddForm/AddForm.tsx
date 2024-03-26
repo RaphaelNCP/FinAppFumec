@@ -1,16 +1,14 @@
 import { useState } from "react";
-import { Text, View } from "react-native";
-import RNPickerSelect from "react-native-picker-select";
-import DateTimePicker, {
-	DateType,
-} from "react-native-ui-datepicker";
+import { View } from "react-native";
+import { DateType } from "react-native-ui-datepicker";
 import {
 	gainCategoryData,
 	wastCategoryData,
 } from "../../../../Utils/Data/CategoryData";
 import { AddFormProps } from "../../../../Utils/Types/AddFormProps";
+import { CategoryPicker } from "../CategoryPicker/CategoryPicker";
+import { DatePicker } from "../DatePicker";
 import { FormField } from "../FormField";
-import { styles } from "./AddFormStyle";
 
 export const AddForm = ({
 	addType,
@@ -37,12 +35,6 @@ export const AddForm = ({
 
 	const handleChangeValue = (value: string) => {
 		setValue(value);
-	};
-
-	const handleChangeCategory = (
-		category: string
-	) => {
-		setCategory(category);
 	};
 
 	const categoryData =
@@ -74,39 +66,12 @@ export const AddForm = ({
 				onChange={handleChangeValue}
 				value={value}
 			/>
-			<View style={styles.pickerContainer}>
-				<Text style={styles.formPickerTitle}>
-					Categoria:
-				</Text>
-				<View style={styles.picker}>
-					<RNPickerSelect
-						onValueChange={handleChangeCategory}
-						value={category}
-						placeholder={{
-							label: "Selecione a categoria",
-							value: null,
-							color: "#000",
-						}}
-						items={categoryData}
-					/>
-				</View>
-			</View>
-			<View>
-				<Text style={styles.formPickerTitle}>
-					Data:
-				</Text>
-				<View style={styles.container}>
-					<DateTimePicker
-						mode="single"
-						date={date}
-						selectedItemColor="#50C878"
-						locale="pt-BR"
-						onChange={(date) => {
-							setDate(date.date);
-						}}
-					/>
-				</View>
-			</View>
+			<CategoryPicker
+				category={category}
+				setCategory={setCategory}
+				categoryData={categoryData}
+			/>
+			<DatePicker date={date} setDate={setDate} />
 		</View>
 	);
 };
