@@ -10,26 +10,18 @@ import { CategoryPicker } from "../CategoryPicker/CategoryPicker";
 import { DatePicker } from "../DatePicker";
 import { FormField } from "../FormField";
 
-export const AddForm = ({
-	addType,
-}: AddFormProps) => {
-	const [date, setDate] = useState<DateType>(
-		new Date()
-	);
+export const AddForm = ({ addType }: AddFormProps) => {
+	const [date, setDate] = useState<DateType>(new Date());
 	const [name, setName] = useState<string>("");
-	const [description, setDescription] =
-		useState<string>("");
+	const [description, setDescription] = useState<string>("");
 	const [value, setValue] = useState<string>("");
-	const [category, setCategory] =
-		useState<string>("");
+	const [category, setCategory] = useState<string>("");
 
 	const handleChangeName = (name: string) => {
 		setName(name);
 	};
 
-	const handleChangeDescription = (
-		description: string
-	) => {
+	const handleChangeDescription = (description: string) => {
 		setDescription(description);
 	};
 
