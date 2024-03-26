@@ -1,10 +1,10 @@
-import { NavigationContainer } from "@react-navigation/native";
-import { MyTabs } from "./src/Navigation/Navigation";
+import { LoginScreen } from "./src/Screens/LoginScreen";
 
 export default function App() {
 	return (
-		<NavigationContainer>
-			<MyTabs />
-		</NavigationContainer>
+		// <NavigationContainer>
+		// 	<MyTabs />
+		// </NavigationContainer>
+		<LoginScreen />
 	);
 }

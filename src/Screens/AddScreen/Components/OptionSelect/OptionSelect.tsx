@@ -1,24 +1,17 @@
-import { Dispatch } from "react";
 import { View } from "react-native";
 import { Button } from "../../../../Components/Button";
 import { Title } from "../../../../Components/StyledComponents/Title";
-import { styles } from "../../AddScreenStyle";
-
-type OptionSelectProps = {
-	typeValue: Dispatch<
-		React.SetStateAction<string>
-	>;
-	value: string;
-};
-
-const isDisabled = (value: string): boolean => {
-	return value === "gain" ? false : true;
-};
+import { OptionSelectProps } from "../../../../Utils/Types/OptionSelectProps";
+import { styles } from "./OptionSelectStyle";
 
 export const OptionSelect = ({
 	typeValue,
 	value,
 }: OptionSelectProps) => {
+	const isDisabled = (value: string): boolean => {
+		return value === "gain" ? false : true;
+	};
+
 	return (
 		<View style={styles.optionSelectContainer}>
 			<Title>Selecione</Title>
