@@ -8,18 +8,19 @@ import { styles } from "./ButtonStyle";
 export const Button = ({
 	text,
 	onPress,
-	disabled,
 	width = 120,
 	height = 46,
+	isDisabled,
 }: ButtonProps) => {
 	return (
 		<TouchableOpacity
 			style={[
-				styles.button,
 				{ width: width, height: height },
+				isDisabled
+					? styles.disabledButton
+					: styles.button,
 			]}
 			onPress={onPress}
-			disabled={disabled}
 		>
 			<Text style={styles.buttonText}>
 				{text}

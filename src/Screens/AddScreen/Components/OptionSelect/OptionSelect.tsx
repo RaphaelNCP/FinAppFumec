@@ -28,14 +28,14 @@ export const OptionSelect = ({
 					onPress={() => {
 						typeValue("gain");
 					}}
-					disabled={isDisabled(value)}
+					isDisabled={isDisabled(value)}
 				/>
 				<Button
 					text="Despesa"
 					onPress={() => {
 						typeValue("waste");
 					}}
-					disabled={isDisabled(value)}
+					isDisabled={!isDisabled(value)}
 				/>
 			</View>
 		</View>

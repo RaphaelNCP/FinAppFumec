@@ -7,6 +7,12 @@ export const styles = StyleSheet.create({
 		borderRadius: 50,
 		alignItems: "center",
 	},
+	disabledButton: {
+		backgroundColor: "grey",
+		padding: 10,
+		borderRadius: 50,
+		alignItems: "center",
+	},
 	buttonText: {
 		color: "#1E1E1E",
 		fontSize: 18,

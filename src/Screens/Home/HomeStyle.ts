@@ -3,7 +3,6 @@ import { StyleSheet } from "react-native";
 export const styles = StyleSheet.create({
 	monthlyBalanceVisor: {
 		marginTop: 10,
-		alignItems: "flex-start",
 		flexDirection: "column",
 	},
 	monthlyBalanceValue: {
@@ -13,7 +12,7 @@ export const styles = StyleSheet.create({
 		flexWrap: "wrap",
 	},
 	resumeBalance: {
-		marginTop: 20,
+		marginVertical: 20,
 		flexDirection: "row",
 		alignItems: "center",
 	},
@@ -22,6 +21,7 @@ export const styles = StyleSheet.create({
 		fontSize: 18,
 		marginLeft: 10,
 		fontWeight: "300",
+		alignItems: "flex-start",
 	},
 	BalanceTopics: {
 		marginTop: 20,

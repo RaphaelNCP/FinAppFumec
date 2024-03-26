@@ -1,4 +1,5 @@
 import { StyleSheet } from "react-native";
+import { boxWidth } from "../../../../Utils/Variables/WidthCalculate";
 
 export const styles = StyleSheet.create({
 	container: {
@@ -11,7 +12,7 @@ export const styles = StyleSheet.create({
 		flexDirection: "row",
 		alignItems: "center",
 		justifyContent: "space-between",
-		width: "100%",
+		width: boxWidth * 0.9,
 	},
 	topicText: {
 		color: "#DADFF7",
