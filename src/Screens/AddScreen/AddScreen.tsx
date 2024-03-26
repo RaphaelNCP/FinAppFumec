@@ -4,8 +4,8 @@ import { ScrollView } from "react-native";
 import { Button } from "../../Components/Button";
 import { Container } from "../../Components/StyledComponents/Container";
 import { boxWidth } from "../../Utils/Variables/WidthCalculate";
-import { AddForm } from "./Components/AddForm/AddForm";
-import { OptionSelect } from "./Components/OptionSelect/OptionSelect";
+import { AddForm } from "./Components/AddForm";
+import { OptionSelect } from "./Components/OptionSelect";
 
 export const AddScreen = () => {
 	const [addType, setAddType] =

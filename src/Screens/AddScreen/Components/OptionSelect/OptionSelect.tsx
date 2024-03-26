@@ -2,7 +2,7 @@ import { Dispatch } from "react";
 import { View } from "react-native";
 import { Button } from "../../../../Components/Button";
 import { Title } from "../../../../Components/StyledComponents/Title";
-import { styles } from "../../AddScreenStyle";
+import { styles } from "./OptionSelectStyle";
 
 type OptionSelectProps = {
 	typeValue: Dispatch<

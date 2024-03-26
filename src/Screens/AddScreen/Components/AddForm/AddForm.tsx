@@ -9,8 +9,8 @@ import {
 	wastCategoryData,
 } from "../../../../Utils/Data/CategoryData";
 import { AddFormProps } from "../../../../Utils/Types/AddFormProps";
-import { styles } from "../../AddScreenStyle";
 import { FormField } from "../FormField";
+import { styles } from "./AddFormStyle";
 
 export const AddForm = ({
 	addType,
