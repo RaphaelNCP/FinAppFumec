@@ -1,6 +1,9 @@
+import { KeyboardTypeOptions } from "react-native";
+
 export type FormFieldProps = {
 	title: string;
-	type?: "default" | "decimal-pad";
+	type?: KeyboardTypeOptions;
 	value?: string;
 	onChange?: (value: string) => void;
+	isPassword?: boolean;
 };

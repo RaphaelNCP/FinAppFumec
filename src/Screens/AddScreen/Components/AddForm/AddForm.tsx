@@ -1,6 +1,7 @@
+import { KeyboardAwareScrollView } from "@codler/react-native-keyboard-aware-scroll-view";
 import { useState } from "react";
-import { View } from "react-native";
 import { DateType } from "react-native-ui-datepicker";
+import { FormField } from "../../../../Components/FormField";
 import {
 	gainCategoryData,
 	wastCategoryData,
@@ -8,7 +9,6 @@ import {
 import { AddFormProps } from "../../../../Utils/Types/AddFormProps";
 import { CategoryPicker } from "../CategoryPicker/CategoryPicker";
 import { DatePicker } from "../DatePicker";
-import { FormField } from "../FormField";
 
 export const AddForm = ({ addType }: AddFormProps) => {
 	const [date, setDate] = useState<DateType>(new Date());
@@ -41,7 +41,7 @@ export const AddForm = ({ addType }: AddFormProps) => {
 			  }));
 
 	return (
-		<View>
+		<KeyboardAwareScrollView>
 			<FormField
 				title="Nome:"
 				onChange={handleChangeName}
@@ -64,6 +64,6 @@ export const AddForm = ({ addType }: AddFormProps) => {
 				categoryData={categoryData}
 			/>
 			<DatePicker date={date} setDate={setDate} />
-		</View>
+		</KeyboardAwareScrollView>
 	);
 };
