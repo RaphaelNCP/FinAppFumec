@@ -25,24 +25,53 @@ export const AddForm = ({
 	const [category, setCategory] =
 		useState<string>("");
 
+	const handleChangeName = (name: string) => {
+		setName(name);
+	};
+
+	const handleChangeDescription = (
+		description: string
+	) => {
+		setDescription(description);
+	};
+
+	const handleChangeValue = (value: string) => {
+		setValue(value);
+	};
+
+	const handleChangeCategory = (
+		category: string
+	) => {
+		setCategory(category);
+	};
+
+	const categoryData =
+		addType === "gain"
+			? gainCategoryData.map((category) => ({
+					label: category.label,
+					value: category.value,
+			  }))
+			: wastCategoryData.map((category) => ({
+					label: category.label,
+					value: category.value,
+			  }));
+
 	return (
 		<View>
 			<FormField
 				title="Nome:"
-				onChange={(name) => setName(name)}
+				onChange={handleChangeName}
 				value={name}
 			/>
 			<FormField
 				title="Descrição:"
-				onChange={(description) =>
-					setDescription(description)
-				}
+				onChange={handleChangeDescription}
 				value={description}
 			/>
 			<FormField
 				title="Valor:"
 				type="decimal-pad"
-				onChange={(value) => setValue(value)}
+				onChange={handleChangeValue}
 				value={value}
 			/>
 			<View style={styles.pickerContainer}>
@@ -51,30 +80,14 @@ export const AddForm = ({
 				</Text>
 				<View style={styles.picker}>
 					<RNPickerSelect
-						onValueChange={(category) =>
-							setCategory(category)
-						}
+						onValueChange={handleChangeCategory}
 						value={category}
 						placeholder={{
 							label: "Selecione a categoria",
 							value: null,
 							color: "#000",
 						}}
-						items={
-							addType === "gain"
-								? gainCategoryData.map(
-										(category) => ({
-											label: category.label,
-											value: category.value,
-										})
-								  )
-								: wastCategoryData.map(
-										(category) => ({
-											label: category.label,
-											value: category.value,
-										})
-								  )
-						}
+						items={categoryData}
 					/>
 				</View>
 			</View>

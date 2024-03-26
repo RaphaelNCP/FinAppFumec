@@ -3,13 +3,11 @@ import { useState } from "react";
 import { ScrollView } from "react-native";
 import { Button } from "../../Components/Button";
 import { Container } from "../../Components/StyledComponents/Container";
+import { boxWidth } from "../../Utils/Variables/WidthCalculate";
 import { AddForm } from "./Components/AddForm/AddForm";
 import { OptionSelect } from "./Components/OptionSelect/OptionSelect";
 
 export const AddScreen = () => {
-	const [selectedDate, setSelectedDate] =
-		useState<string>("");
-
 	const [addType, setAddType] =
 		useState<string>("gain");
 
@@ -19,10 +17,16 @@ export const AddScreen = () => {
 				style="light"
 				backgroundColor="black"
 			/>
-			<OptionSelect />
+			<OptionSelect
+				typeValue={setAddType}
+				value={addType}
+			/>
 			<ScrollView>
 				<AddForm addType={addType} />
-				<Button text="Adicionar" width={300} />
+				<Button
+					text="Adicionar"
+					width={boxWidth}
+				/>
 			</ScrollView>
 		</Container>
 	);

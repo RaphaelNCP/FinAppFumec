@@ -1,6 +1,7 @@
 import { Ionicons } from "@expo/vector-icons";
 import { StatusBar } from "expo-status-bar";
 import {
+	ScrollView,
 	Text,
 	TouchableOpacity,
 	View,
@@ -28,19 +29,19 @@ export const Home = () => {
 					20.800,00 R$
 				</Text>
 			</View>
-			<View style={styles.resumeBalance}>
-				<TouchableOpacity>
-					<Ionicons
-						name="help-circle"
-						size={21}
-						color="#50C878"
-					/>
-				</TouchableOpacity>
-				<Text style={styles.resumeBalanceText}>
-					Resumo de gastos mensais:
-				</Text>
-			</View>
-			<View style={styles.BalanceTopics}>
+			<ScrollView style={styles.BalanceTopics}>
+				<View style={styles.resumeBalance}>
+					<TouchableOpacity>
+						<Ionicons
+							name="help-circle"
+							size={21}
+							color="#50C878"
+						/>
+					</TouchableOpacity>
+					<Text style={styles.resumeBalanceText}>
+						Resumo de gastos mensais:
+					</Text>
+				</View>
 				{topicsData.map((topic, index) => (
 					<BalanceTopic
 						key={index}
@@ -49,7 +50,7 @@ export const Home = () => {
 						value={topic.value}
 					/>
 				))}
-			</View>
+			</ScrollView>
 		</Container>
 	);
 };

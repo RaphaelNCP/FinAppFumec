@@ -1,4 +1,8 @@
 import { StyleSheet } from "react-native";
+import {
+	boxWidth,
+	screenWidth,
+} from "../../Utils/Variables/WidthCalculate";
 
 export const styles = StyleSheet.create({
 	optionSelectContainer: {
@@ -11,7 +15,7 @@ export const styles = StyleSheet.create({
 		flexDirection: "row",
 		alignItems: "center",
 		justifyContent: "space-around",
-		width: "100%",
+		width: screenWidth * 0.86,
 	},
 	pickerContainer: {
 		marginTop: 26,
@@ -25,7 +29,7 @@ export const styles = StyleSheet.create({
 	picker: {
 		marginTop: 0,
 		marginVertical: 40,
-		width: 300,
+		width: boxWidth,
 		borderRadius: 10,
 		overflow: "hidden",
 		backgroundColor: "#DADFF7",
@@ -39,5 +43,6 @@ export const styles = StyleSheet.create({
 		overflow: "hidden",
 		padding: 10,
 		marginBottom: 40,
+		width: boxWidth,
 	},
 });
