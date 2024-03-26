@@ -1,5 +1,5 @@
 import { StyleSheet } from "react-native";
-import { boxWidth } from "../../../../Utils/Variables/WidthCalculate";
+import { boxWidth } from "../../Utils/Variables/WidthCalculate";
 
 export const styles = StyleSheet.create({
 	formFieldContainer: {
@@ -10,6 +10,7 @@ export const styles = StyleSheet.create({
 		fontWeight: "300",
 		color: "#DADFF7",
 		marginBottom: 10,
+		marginRight: 10,
 	},
 	formField: {
 		width: boxWidth,
@@ -18,5 +19,12 @@ export const styles = StyleSheet.create({
 		borderRadius: 10,
 		backgroundColor: "#DADFF7",
 		padding: 14,
+	},
+	titleContainer: {
+		flexDirection: "row",
+		alignItems: "center",
+		justifyContent: "space-between",
+		width: boxWidth,
+		paddingRight: 10,
 	},
 });
