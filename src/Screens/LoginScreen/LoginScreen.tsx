@@ -12,14 +12,6 @@ export const LoginScreen = () => {
 	const [username, setUsername] = useState("");
 	const [password, setPassword] = useState("");
 
-	const handleUsernameChange = (text: string) => {
-		setUsername(text);
-	};
-
-	const handlePasswordChange = (text: string) => {
-		setPassword(text);
-	};
-
 	return (
 		<Container>
 			<View style={styles.callContainer}>
@@ -32,13 +24,13 @@ export const LoginScreen = () => {
 					<FormField
 						title="Usuário"
 						value={username}
-						onChange={handleUsernameChange}
+						onChange={setUsername}
 					/>
 					<FormField
 						title="Senha"
 						isPassword
 						value={password}
-						onChange={handlePasswordChange}
+						onChange={setPassword}
 					/>
 				</View>
 				<Button text="Fazer Login" width={boxWidth} />

@@ -14,26 +14,52 @@ export const RegisterScreen = () => {
 	const [password, setPassword] = useState("");
 	const [confirmPassword, setConfirmPassword] = useState("");
 
-	const handleUsernameChange = (text: string) => {
-		setUsername(text);
-	};
-
-	const handleEmailChange = (text: string) => {
-		setEmail(text);
-	};
-
-	const handlePasswordChange = (text: string) => {
-		setPassword(text);
-	};
-
-	const handleConfirmPasswordChange = (text: string) => {
-		setConfirmPassword(text);
-	};
-
 	const isPasswordValid: boolean = password === confirmPassword;
 
-	const isFormValid: boolean =
-		username && email && password && isPasswordValid ? true : false;
+	// const isFormValid = (
+	// 	name: string,
+	// 	email: string,
+	// 	password: string
+	// ) => {
+	// 	if (
+	// 		validName(name) &&
+	// 		validEmail(email) &&
+	// 		validPassword(password) &&
+	// 		isPasswordValid
+	// 	) {
+	// 		return true;
+	// 	}
+	// 	return false;
+	// };
+
+	// const validName = (username: string) => {
+	// 	if (username.length < 4) {
+	// 		return false;
+	// 	}
+	// 	return true;
+	// };
+
+	// const validEmail = (email: string) => {
+	// 	const re = /\S+@\S+\.\S+/;
+	// 	return re.test(email);
+	// };
+
+	// const validPassword = (password: string) => {
+	// 	if (password.length < 6) {
+	// 		return false;
+	// 	}
+	// 	return true;
+	// };
+
+	// const emptyFieldAlert = () => {
+	// 	if (!isFormValid) {
+	// 		return (
+	// 			<Text style={styles.errorText}>
+	// 				Preencha todos os campos corretamente
+	// 			</Text>
+	// 		);
+	// 	}
+	// };
 
 	const renderPasswordError = () => {
 		if (!isPasswordValid) {
@@ -56,20 +82,20 @@ export const RegisterScreen = () => {
 						title="Usuário"
 						placeholder="Digite o seu nomer de usuário"
 						value={username}
-						onChange={handleUsernameChange}
+						onChange={setUsername}
 					/>
 					<FormField
 						title="Email"
 						placeholder="Digite o seu email"
 						value={email}
-						onChange={handleEmailChange}
+						onChange={setEmail}
 					/>
 					<FormField
 						title="Senha"
 						isPassword
 						placeholder="Digite sua senha"
 						value={password}
-						onChange={handlePasswordChange}
+						onChange={setPassword}
 					/>
 					{renderPasswordError()}
 					<FormField
@@ -77,7 +103,7 @@ export const RegisterScreen = () => {
 						isPassword
 						placeholder="Digite a senha novamente"
 						value={confirmPassword}
-						onChange={handleConfirmPasswordChange}
+						onChange={setConfirmPassword}
 					/>
 				</View>
 				<Button text="Realizar cadastro" width={boxWidth} />

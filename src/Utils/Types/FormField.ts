@@ -7,4 +7,5 @@ export type FormFieldProps = {
 	value?: string;
 	onChange?: (value: string) => void;
 	isPassword?: boolean;
+	set?: React.Dispatch<React.SetStateAction<string>>;
 };
