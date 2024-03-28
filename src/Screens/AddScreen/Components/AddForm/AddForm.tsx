@@ -17,18 +17,6 @@ export const AddForm = ({ addType }: AddFormProps) => {
 	const [value, setValue] = useState<string>("");
 	const [category, setCategory] = useState<string>("");
 
-	const handleChangeName = (name: string) => {
-		setName(name);
-	};
-
-	const handleChangeDescription = (description: string) => {
-		setDescription(description);
-	};
-
-	const handleChangeValue = (value: string) => {
-		setValue(value);
-	};
-
 	const categoryData =
 		addType === "gain"
 			? gainCategoryData.map((category) => ({
@@ -42,20 +30,16 @@ export const AddForm = ({ addType }: AddFormProps) => {
 
 	return (
 		<KeyboardAwareScrollView>
-			<FormField
-				title="Nome:"
-				onChange={handleChangeName}
-				value={name}
-			/>
+			<FormField title="Nome:" onChange={setName} value={name} />
 			<FormField
 				title="Descrição:"
-				onChange={handleChangeDescription}
+				onChange={setDescription}
 				value={description}
 			/>
 			<FormField
 				title="Valor:"
 				type="decimal-pad"
-				onChange={handleChangeValue}
+				onChange={setValue}
 				value={value}
 			/>
 			<CategoryPicker

@@ -13,15 +13,17 @@ export const FormField = ({
 	title,
 	type = "default",
 	value,
-	onChange,
 	isPassword = false,
+	placeholder,
+	set,
 }: FormFieldProps) => {
 	const [showPassword, setShowPassword] = useState(false);
 
-	const handleChange = (text: string) => {
-		if (onChange) {
-			onChange(text);
-		}
+	const handle = (
+		text: string,
+		set: React.Dispatch<React.SetStateAction<string>>
+	) => {
+		set(text);
 	};
 
 	const toggleShowPassword = () => {
@@ -52,9 +54,10 @@ export const FormField = ({
 			<TextInput
 				style={styles.formField}
 				keyboardType={type}
+				placeholder={placeholder}
 				value={value}
 				secureTextEntry={!showPassword && isPassword}
-				onChange={(e) => handleChange(e.nativeEvent.text)}
+				onChange={(e) => handle(e.nativeEvent.text, set!)}
 			/>
 		</View>
 	);
