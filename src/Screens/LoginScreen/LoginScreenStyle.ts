@@ -22,4 +22,8 @@ export const styles = StyleSheet.create({
 	loginContainer: {
 		marginBottom: 40,
 	},
+	errorText: {
+		color: "red",
+		fontSize: 12,
+	},
 });

@@ -1,25 +1,63 @@
 import { Ionicons } from "@expo/vector-icons";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
+import { NavigationContainer } from "@react-navigation/native";
+import { createStackNavigator } from "@react-navigation/stack";
+import { User } from "firebase/auth";
+import { useState } from "react";
+import { Header } from "../Components/Header/Header";
 import { AddScreen } from "../Screens/AddScreen";
 import { HistoryScreen } from "../Screens/HistoryScreen";
 import { Home } from "../Screens/Home";
+import { LoginScreen } from "../Screens/LoginScreen";
+import { RegisterScreen } from "../Screens/RegisterScreen";
 
 const Tab = createBottomTabNavigator();
+const Stack = createStackNavigator();
 
-export const MyTabs = () => {
+export const Navigation = () => {
+	const [user, setUser] = useState<User | undefined>();
+
+	return (
+		<NavigationContainer>
+			<Stack.Navigator>
+				{!user ? (
+					<>
+						<Stack.Screen
+							name="Login"
+							options={{ headerShown: false }}
+						>
+							{() => <LoginScreen setUser={setUser} />}
+						</Stack.Screen>
+						<Stack.Screen
+							name="Register"
+							options={{ headerShown: false }}
+						>
+							{() => <RegisterScreen setUser={setUser} />}
+						</Stack.Screen>
+					</>
+				) : (
+					<Stack.Screen
+						name="Main"
+						component={MyTabs}
+						options={{ headerShown: false }}
+					/>
+				)}
+			</Stack.Navigator>
+		</NavigationContainer>
+	);
+};
+
+const MyTabs = () => {
 	return (
 		<Tab.Navigator
 			initialRouteName="Home"
 			screenOptions={{
 				tabBarActiveTintColor: "#50C878",
-				tabBarInactiveTintColor: "#000",
-				headerStyle: {
-					backgroundColor: "#DADFF7",
-				},
+				tabBarInactiveTintColor: "#1e1e1e",
 				tabBarStyle: {
 					backgroundColor: "#DADFF7",
 				},
-				headerTitle: "FinApp Fumec",
+				header: (props) => <Header {...props} />,
 			}}
 		>
 			<Tab.Screen
@@ -27,11 +65,7 @@ export const MyTabs = () => {
 				component={AddScreen}
 				options={{
 					tabBarIcon: ({ color, size }) => (
-						<Ionicons
-							name="add"
-							color={color}
-							size={size}
-						/>
+						<Ionicons name="add" color={color} size={size} />
 					),
 				}}
 			/>
@@ -40,11 +74,7 @@ export const MyTabs = () => {
 				component={Home}
 				options={{
 					tabBarIcon: ({ color, size }) => (
-						<Ionicons
-							name="home"
-							color={color}
-							size={size}
-						/>
+						<Ionicons name="home" color={color} size={size} />
 					),
 				}}
 			/>
@@ -53,11 +83,7 @@ export const MyTabs = () => {
 				component={HistoryScreen}
 				options={{
 					tabBarIcon: ({ color, size }) => (
-						<Ionicons
-							name="newspaper"
-							color={color}
-							size={size}
-						/>
+						<Ionicons name="newspaper" color={color} size={size} />
 					),
 				}}
 			/>
