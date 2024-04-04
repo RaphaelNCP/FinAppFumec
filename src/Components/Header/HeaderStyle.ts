@@ -1,16 +1,17 @@
 import { StatusBar, StyleSheet } from "react-native";
+import { primaryColor, tertiaryColor } from "../../Utils/Theme";
 
 export const styles = StyleSheet.create({
 	callContainer: {
-		backgroundColor: "#1e1e1e",
+		backgroundColor: primaryColor,
 		padding: 10,
 		marginTop: StatusBar.currentHeight,
 		borderLeftWidth: 15,
-		borderColor: "#50C878",
+		borderColor: tertiaryColor,
 	},
 	finAppText: {
 		fontSize: 30,
 		fontWeight: "bold",
-		color: "#50C878",
+		color: tertiaryColor,
 	},
 });

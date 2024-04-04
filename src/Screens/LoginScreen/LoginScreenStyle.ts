@@ -1,4 +1,5 @@
 import { StyleSheet } from "react-native";
+import { secondaryColor, tertiaryColor } from "../../Utils/Theme";
 import { boxWidth } from "../../Utils/Variables/WidthCalculate";
 
 export const styles = StyleSheet.create({
@@ -7,17 +8,17 @@ export const styles = StyleSheet.create({
 		width: boxWidth,
 		marginVertical: 50,
 		borderLeftWidth: 5,
-		borderColor: "#50C878",
+		borderColor: tertiaryColor,
 		paddingLeft: 12,
 	},
 	finAppText: {
 		fontSize: 70,
 		fontWeight: "bold",
-		color: "#50C878",
+		color: tertiaryColor,
 	},
 	subtitle: {
 		fontSize: 20,
-		color: "#DADFF7",
+		color: secondaryColor,
 	},
 	loginContainer: {
 		marginBottom: 40,

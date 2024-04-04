@@ -1,4 +1,5 @@
 import { StyleSheet } from "react-native";
+import { tertiaryColor } from "../../../../Utils/Theme";
 
 export const styles = StyleSheet.create({
 	monthlyBalanceVisor: {
@@ -7,7 +8,7 @@ export const styles = StyleSheet.create({
 	},
 	monthlyBalanceValue: {
 		fontSize: 40,
-		color: "#50C878",
+		color: tertiaryColor,
 		fontWeight: "bold",
 		flexWrap: "wrap",
 	},

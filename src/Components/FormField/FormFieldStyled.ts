@@ -1,4 +1,5 @@
 import { StyleSheet } from "react-native";
+import { secondaryColor } from "../../Utils/Theme";
 import { boxWidth } from "../../Utils/Variables/WidthCalculate";
 
 export const styles = StyleSheet.create({
@@ -8,7 +9,7 @@ export const styles = StyleSheet.create({
 	formTitle: {
 		fontSize: 18,
 		fontWeight: "300",
-		color: "#DADFF7",
+		color: secondaryColor,
 		marginBottom: 10,
 		marginRight: 10,
 	},
@@ -17,7 +18,7 @@ export const styles = StyleSheet.create({
 		height: 50,
 		borderWidth: 1,
 		borderRadius: 10,
-		backgroundColor: "#DADFF7",
+		backgroundColor: secondaryColor,
 		padding: 14,
 	},
 	titleContainer: {

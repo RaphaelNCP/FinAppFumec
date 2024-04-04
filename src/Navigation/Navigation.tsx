@@ -10,6 +10,11 @@ import { HistoryScreen } from "../Screens/HistoryScreen";
 import { Home } from "../Screens/Home";
 import { LoginScreen } from "../Screens/LoginScreen";
 import { RegisterScreen } from "../Screens/RegisterScreen";
+import {
+	primaryColor,
+	secondaryColor,
+	tertiaryColor,
+} from "../Utils/Theme";
 
 const Tab = createBottomTabNavigator();
 const Stack = createStackNavigator();
@@ -52,10 +57,10 @@ const MyTabs = () => {
 		<Tab.Navigator
 			initialRouteName="Home"
 			screenOptions={{
-				tabBarActiveTintColor: "#50C878",
-				tabBarInactiveTintColor: "#1e1e1e",
+				tabBarActiveTintColor: tertiaryColor,
+				tabBarInactiveTintColor: primaryColor,
 				tabBarStyle: {
-					backgroundColor: "#DADFF7",
+					backgroundColor: secondaryColor,
 				},
 				header: (props) => <Header {...props} />,
 			}}

@@ -1,5 +1,9 @@
 import { StyleSheet } from "react-native";
 import { boxWidth } from "../../../../Utils/Variables/WidthCalculate";
+import {
+	primaryColor,
+	secondaryColor,
+} from "../../../../Utils/Theme";
 
 export const styles = StyleSheet.create({
 	pickerContainer: {
@@ -8,7 +12,7 @@ export const styles = StyleSheet.create({
 	formPickerTitle: {
 		fontSize: 18,
 		fontWeight: "300",
-		color: "#DADFF7",
+		color: secondaryColor,
 		marginBottom: 10,
 	},
 	picker: {
@@ -17,7 +21,7 @@ export const styles = StyleSheet.create({
 		width: boxWidth,
 		borderRadius: 10,
 		overflow: "hidden",
-		backgroundColor: "#DADFF7",
-		color: "#000",
+		backgroundColor: secondaryColor,
+		color: primaryColor,
 	},
 });
