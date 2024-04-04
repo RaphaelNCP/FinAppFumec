@@ -45,6 +45,23 @@ export const AddForm = ({ addType }: AddFormProps) => {
 	// 	});
 	// };
 
+	const NameFormmater = (name: string): string => {
+		name = name.charAt(0).toUpperCase() + name.slice(1);
+		return name;
+	};
+
+	const DescriptionFormmater = (description: string): string => {
+		description =
+			description.charAt(0).toUpperCase() + description.slice(1);
+		return description;
+	};
+
+	const ValueFormmater = (value: string): string => {
+		value = parseFloat(value).toFixed(2);
+		value = value.toString();
+		return value;
+	};
+
 	return (
 		<KeyboardAwareScrollView>
 			<FormField title="Nome:" set={setName} value={name} />

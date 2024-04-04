@@ -6,7 +6,10 @@ export const styles = StyleSheet.create({
 		padding: 10,
 		marginTop: StatusBar.currentHeight,
 		borderLeftWidth: 15,
-		borderColor: "#50C878",
+		borderColor: tertiaryColor,
+		justifyContent: "space-between",
+		flexDirection: "row",
+		alignItems: "center",
 	},
 	finAppText: {
 		fontSize: 30,
