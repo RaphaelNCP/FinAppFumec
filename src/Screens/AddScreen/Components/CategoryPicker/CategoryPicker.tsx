@@ -1,26 +1,24 @@
 import { Text, View } from "react-native";
 import RNPickerSelect from "react-native-picker-select";
-import { styles } from "./CategoryPickerStyle";
 import { CategoryPickerProps } from "../../../../Utils/Types/CategoryPickerProps";
+import { styles } from "./CategoryPickerStyle";
 
 export const CategoryPicker = ({
 	category,
 	setCategory,
 	categoryData,
+	id,
 }: CategoryPickerProps) => {
-	const handleChangeCategory = (
-		category: string
-	) => {
-		setCategory(category);
+	const handleChangeCategory = (value: string) => {
+		setCategory(value);
 	};
 
 	return (
 		<View style={styles.pickerContainer}>
-			<Text style={styles.formPickerTitle}>
-				Categoria:
-			</Text>
+			<Text style={styles.formPickerTitle}>Categoria:</Text>
 			<View style={styles.picker}>
 				<RNPickerSelect
+					key={id}
 					onValueChange={handleChangeCategory}
 					value={category}
 					placeholder={{

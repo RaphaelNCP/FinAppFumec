@@ -1,65 +1,65 @@
 export const wastCategoryData = [
 	{
 		label: "Moradia",
-		value: "Alimentação",
+		value: "Moradia",
 	},
 	{
 		label: "Alimentação",
-		value: "Transporte",
+		value: "Alimentação",
 	},
 	{
 		label: "Transporte",
-		value: "Saúde",
-	},
-	{
-		label: "Saúde",
-		value: "Educação",
-	},
-	{
-		label: "Educação",
-		value: "Lazer",
-	},
-	{
-		label: "Lazer",
-		value: "Outros",
-	},
-	{
-		label: "Compras",
 		value: "Transporte",
 	},
 	{
-		label: "Dívidas",
+		label: "Saúde",
 		value: "Saúde",
 	},
 	{
-		label: "Economias",
+		label: "Educação",
 		value: "Educação",
 	},
 	{
-		label: "Impostos",
+		label: "Lazer",
 		value: "Lazer",
+	},
+	{
+		label: "Compras",
+		value: "Compras",
+	},
+	{
+		label: "Dívidas",
+		value: "Dívidas",
+	},
+	{
+		label: "Economias",
+		value: "Economias",
+	},
+	{
+		label: "Impostos",
+		value: "Impostos",
 	},
 ];
 
 export const gainCategoryData = [
 	{
 		label: "Salário",
-		value: "Alimentação",
+		value: "Salário",
 	},
 	{
 		label: "Renda Passiva",
-		value: "Transporte",
+		value: "Renda Passiva",
 	},
 	{
 		label: "Reembolsos",
-		value: "Saúde",
+		value: "Reembolsos",
 	},
 	{
 		label: "Bônus",
-		value: "Educação",
+		value: "Bônus",
 	},
 	{
 		label: "Ganhos Extras",
-		value: "Lazer",
+		value: "Ganhos Extras",
 	},
 ];

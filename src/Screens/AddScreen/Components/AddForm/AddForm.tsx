@@ -30,6 +30,8 @@ export const AddForm = ({ addType }: AddFormProps) => {
 					value: category.value,
 			  }));
 
+	const key = addType === "gain" ? 1 : 2;
+
 	// const register = async () => {
 	// 	const userId = auth.currentUser?.uid;
 	// 	if (!userId) return alert("Usuário não encontrado");
@@ -60,6 +62,33 @@ export const AddForm = ({ addType }: AddFormProps) => {
 		return value;
 	};
 
+	const DateFormatter = (date: DateType): string => {
+		let dateString = date!.toString();
+		dateString = dateString.slice(0, 16);
+
+		const meses: { [key: string]: string } = {
+			Jan: "01",
+			Feb: "02",
+			Mar: "03",
+			Apr: "04",
+			May: "05",
+			Jun: "06",
+			Jul: "07",
+			Aug: "08",
+			Sep: "09",
+			Oct: "10",
+			Nov: "11",
+			Dec: "12",
+		};
+
+		const partes = dateString.split(" ");
+		const dia = partes[1];
+		const mes = meses[partes[2]];
+		const ano = partes[3];
+
+		return `${dia}/${mes}/${ano}`;
+	};
+
 	return (
 		<KeyboardAwareScrollView>
 			<FormField title="Nome:" set={setName} value={name} />
@@ -75,6 +104,7 @@ export const AddForm = ({ addType }: AddFormProps) => {
 				value={value}
 			/>
 			<CategoryPicker
+				id={key}
 				category={category}
 				setCategory={setCategory}
 				categoryData={categoryData}
@@ -82,7 +112,16 @@ export const AddForm = ({ addType }: AddFormProps) => {
 			<DatePicker date={date} setDate={setDate} />
 			<Button
 				text="Adicionar"
-				// onPress={() => register()}
+				onPress={() =>
+					console.log(
+						name,
+						description,
+						value,
+						category,
+						DateFormatter(date),
+						date
+					)
+				}
 				width={boxWidth}
 			/>
 		</KeyboardAwareScrollView>
