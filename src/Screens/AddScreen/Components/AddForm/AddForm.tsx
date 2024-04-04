@@ -1,5 +1,4 @@
 import { KeyboardAwareScrollView } from "@codler/react-native-keyboard-aware-scroll-view";
-import { doc, setDoc } from "firebase/firestore";
 import { useState } from "react";
 import { DateType } from "react-native-ui-datepicker";
 import { Button } from "../../../../Components/Button";
@@ -10,7 +9,6 @@ import {
 } from "../../../../Utils/Data/CategoryData";
 import { AddFormProps } from "../../../../Utils/Types/AddFormProps";
 import { boxWidth } from "../../../../Utils/Variables/WidthCalculate";
-import { auth, db } from "../../../../services/firebaseConfig";
 import { CategoryPicker } from "../CategoryPicker/CategoryPicker";
 import { DatePicker } from "../DatePicker";
 

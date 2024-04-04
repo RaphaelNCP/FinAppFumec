@@ -1,8 +1,9 @@
 import { StyleSheet } from "react-native";
+import { primaryColor, tertiaryColor } from "../../Utils/Theme";
 
 export const styles = StyleSheet.create({
 	button: {
-		backgroundColor: "#50C878",
+		backgroundColor: tertiaryColor,
 		padding: 10,
 		borderRadius: 50,
 		alignItems: "center",
@@ -14,7 +15,7 @@ export const styles = StyleSheet.create({
 		alignItems: "center",
 	},
 	buttonText: {
-		color: "#1E1E1E",
+		color: primaryColor,
 		fontSize: 18,
 	},
 });

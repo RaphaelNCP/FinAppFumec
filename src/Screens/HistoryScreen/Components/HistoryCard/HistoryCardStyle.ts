@@ -1,11 +1,12 @@
 import { StyleSheet } from "react-native";
 import { boxWidth } from "../../../../Utils/Variables/WidthCalculate";
+import { secondaryColor } from "../../../../Utils/Theme";
 
 export const styles = StyleSheet.create({
 	historyCard: {
 		width: boxWidth,
 		height: 150,
-		backgroundColor: "#DADFF7",
+		backgroundColor: secondaryColor,
 		borderRadius: 10,
 		marginTop: 26,
 		flexDirection: "row",

@@ -1,4 +1,5 @@
 import { StyleSheet } from "react-native";
+import { secondaryColor } from "../../../../Utils/Theme";
 
 export const styles = StyleSheet.create({
 	resumeBalance: {
@@ -7,7 +8,7 @@ export const styles = StyleSheet.create({
 		alignItems: "center",
 	},
 	resumeBalanceText: {
-		color: "#DADFF7",
+		color: secondaryColor,
 		fontSize: 18,
 		marginLeft: 10,
 		fontWeight: "300",
