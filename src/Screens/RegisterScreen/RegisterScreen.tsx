@@ -65,16 +65,6 @@ export const RegisterScreen = ({ setUser }: AuthType) => {
 
 	const isUsernameValid: boolean = username.length > 2;
 
-	const userError = () => {
-		if (!isUsernameValid) {
-			return (
-				<Text style={styles.errorText}>
-					O nome de usuário deve ter no mínimo 3 caracteres
-				</Text>
-			);
-		}
-	};
-
 	const isPasswordValid: boolean = password === confirmPassword;
 
 	const passwordNoMatch = () => {
@@ -98,13 +88,6 @@ export const RegisterScreen = ({ setUser }: AuthType) => {
 			<KeyboardAwareScrollView>
 				<Title>Cadastrar:</Title>
 				<View style={styles.loginContainer}>
-					<FormField
-						title="Usuário"
-						placeholder="Digite o seu nomer de usuário"
-						value={username}
-						set={setUsername}
-					/>
-					{userError()}
 					<FormField
 						title="Email"
 						placeholder="Digite o seu email"
@@ -132,7 +115,12 @@ export const RegisterScreen = ({ setUser }: AuthType) => {
 				</View>
 				<Button
 					text="Realizar cadastro"
-					onPress={() => handleRegister()}
+					onPress={() => {
+						handleRegister();
+						alert("Cadastro realizado com sucesso!");
+						setEmail("");
+						setPassword("");
+					}}
 					width={boxWidth}
 				/>
 				<View style={{ marginVertical: 30 }}>
